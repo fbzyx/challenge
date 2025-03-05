@@ -29,10 +29,10 @@ def apply_filters(
     # Sharpening
 
     frame = blur_apply(frame, blur_strength)
-    frame = canny_apply(frame, blur_strength)
-    frame = brightness_apply(frame, blur_strength)
-    frame = saturation_apply(frame, blur_strength)
-    frame = sepia_apply(frame, blur_strength)
-    frame = sharpen_apply(frame, blur_strength)
+    frame = canny_apply(frame, canny_threshold)
+    frame = brightness_apply(frame, brightness_strength)
+    frame = saturation_apply(frame, saturation_strength)
+    frame = sepia_apply(frame, sepia_strength)
+    frame = sharpen_apply(frame, sharpen_strength)
 
     return frame

@@ -1,25 +1,36 @@
 import multiprocessing
 from export_job import video_exporter_job
 
-def export_video_process(self, output_path):
 
+def export_video_process(
+        video_path,
+        output_path,
+        fps,
+        frame_size,
+        blur_strength,
+        canny_threshold,
+        sepia_strength,
+        brightness_strength,
+        saturation_strength,
+        sharpen_strength,
+):
     if not output_path:
         return
 
     # Run export in background process
-    self.export_process = multiprocessing.Process(
+    export_process = multiprocessing.Process(
         target=video_exporter_job,
         args=(
-            self.video_path,
+            video_path,
             output_path,
-            self.fps,
-            (self.frame_width, self.frame_height),
-            self.slider_blur.value(),
-            self.slider_canny.value(),
-            self.slider_sepia.value(),
-            self.slider_brightness.value(),
-            self.slider_saturation.value(),
-            self.slider_sharpen.value(),
+            fps,
+            frame_size,
+            blur_strength,
+            canny_threshold,
+            sepia_strength,
+            brightness_strength,
+            saturation_strength,
+            sharpen_strength,
         ),
     )
-    self.export_process.start()
+    export_process.start()

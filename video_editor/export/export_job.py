@@ -22,9 +22,6 @@ def video_exporter_job(
     fourcc = cv2.VideoWriter_fourcc(*"mp4v")
     out = cv2.VideoWriter(save_path, fourcc, fps, frame_size)
 
-    sepia_matrix = np.array(
-        [[0.272, 0.534, 0.131], [0.349, 0.686, 0.168], [0.393, 0.769, 0.189]]
-    )
 
     while True:
         ret, frame = cap.read()
