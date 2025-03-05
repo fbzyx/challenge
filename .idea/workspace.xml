@@ -5,24 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d94c86f6-3880-4399-8ad4-9c7bee5d6cc0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/aquaticode_challenge.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/export/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/export/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/filter/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/filter/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/load/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/load/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/ui/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/ui/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_editor/export/export.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_editor/filter/filter_apply.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_editor/filter/filters/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_editor/filter/filters/blur.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_editor/filter/filters/brightness.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_editor/filter/filters/canny.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_editor/filter/filters/saturation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_editor/filter/filters/sepia.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_editor/filter/filters/sharpen.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_editor/load/load.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_editor/ui/qt/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_editor/ui/ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainWindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/export/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/export/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/filter/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/load/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/load/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/ui/qt/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/ui/qt/MainWindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/ui/qt/command" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/ui/qt/command" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/ui/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/ui/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,11 +55,12 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/franzbusche/Documents/Python/aquaticode_challenge/aquaticode_challenge/video_editor/ui/export"
+    "last_opened_file_path": "/Users/franzbusche/Documents/Python/aquaticode_challenge/aquaticode_challenge/video_editor/ui/qt"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/video_editor/ui/qt" />
       <recent name="$PROJECT_DIR$/video_editor/ui/export" />
       <recent name="$PROJECT_DIR$/video_editor/ui" />
       <recent name="$PROJECT_DIR$/video_editor/load" />

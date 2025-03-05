@@ -35,7 +35,12 @@ class Ui_MainWindow(object):
         self.btn_export.setIcon(icon)
         self.btn_export.setObjectName("btn_export")
         self.horizontalLayout_2.addWidget(self.btn_export)
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        spacerItem = QtWidgets.QSpacerItem(
+            40,
+            20,
+            QtWidgets.QSizePolicy.Policy.Expanding,
+            QtWidgets.QSizePolicy.Policy.Minimum,
+        )
         self.horizontalLayout_2.addItem(spacerItem)
         self.verticalLayout_2.addLayout(self.horizontalLayout_2)
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
@@ -47,7 +52,12 @@ class Ui_MainWindow(object):
         self.label_video.setText("")
         self.label_video.setObjectName("label_video")
         self.horizontalLayout_3.addWidget(self.label_video)
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        spacerItem1 = QtWidgets.QSpacerItem(
+            40,
+            20,
+            QtWidgets.QSizePolicy.Policy.Expanding,
+            QtWidgets.QSizePolicy.Policy.Minimum,
+        )
         self.horizontalLayout_3.addItem(spacerItem1)
         self.verticalLayout_3 = QtWidgets.QVBoxLayout()
         self.verticalLayout_3.setObjectName("verticalLayout_3")
@@ -127,7 +137,12 @@ class Ui_MainWindow(object):
         self.slider_canny.setOrientation(QtCore.Qt.Orientation.Horizontal)
         self.slider_canny.setObjectName("slider_canny")
         self.verticalLayout_3.addWidget(self.slider_canny)
-        spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        spacerItem2 = QtWidgets.QSpacerItem(
+            20,
+            40,
+            QtWidgets.QSizePolicy.Policy.Minimum,
+            QtWidgets.QSizePolicy.Policy.Expanding,
+        )
         self.verticalLayout_3.addItem(spacerItem2)
         self.horizontalLayout_3.addLayout(self.verticalLayout_3)
         self.horizontalLayout_3.setStretch(0, 8)
@@ -152,7 +167,12 @@ class Ui_MainWindow(object):
         self.label_time = QtWidgets.QLabel(parent=self.verticalLayoutWidget)
         self.label_time.setObjectName("label_time")
         self.horizontalLayout_5.addWidget(self.label_time)
-        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        spacerItem3 = QtWidgets.QSpacerItem(
+            40,
+            20,
+            QtWidgets.QSizePolicy.Policy.Expanding,
+            QtWidgets.QSizePolicy.Policy.Minimum,
+        )
         self.horizontalLayout_5.addItem(spacerItem3)
         self.verticalLayout_2.addLayout(self.horizontalLayout_5)
         self.verticalLayout_2.setStretch(0, 1)

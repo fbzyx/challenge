@@ -1,0 +1,1 @@
+pyuic6 video_editor/ui/qt/mainwindow.ui -o video_editor/ui/qt/MainWindow.py
