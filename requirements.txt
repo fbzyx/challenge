@@ -1,0 +1,14 @@
+black==25.1.0
+click==8.1.8
+mypy-extensions==1.0.0
+numpy==2.0.2
+opencv-python==4.11.0.86
+packaging==24.2
+pathspec==0.12.1
+platformdirs==4.3.6
+PyQt6==6.8.1
+PyQt6-Qt6==6.8.2
+PyQt6_sip==13.10.0
+ruff==0.9.9
+tomli==2.2.1
+typing_extensions==4.12.2
