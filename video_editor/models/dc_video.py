@@ -2,13 +2,15 @@ from dataclasses import dataclass, field
 from typing import Tuple, Optional
 from cv2 import VideoCapture
 
+
 @dataclass
 class DCVideoData:
     fps: Optional[int] = None
-    frame_size: Optional[Tuple[int, int] ] = None
+    frame_size: Optional[Tuple[int, int]] = None
     total_frames: Optional[int] = None
     input_path: Optional[str] = None
-    cap: Optional[VideoCapture] = None
+    cap: Optional[VideoCapture] = None  # cannot pass to subprocess since not pickeable
+
 
 @dataclass
 class DCFiltersParams:
@@ -18,7 +20,7 @@ class DCFiltersParams:
     brightness_strength: Optional[int] = None
     saturation_strength: Optional[int] = None
     sharpen_strength: Optional[int] = None
-    frame: Optional = None
+
 
 @dataclass
 class DCVideoExportParams:
