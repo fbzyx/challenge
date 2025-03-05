@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import multiprocessing
 
-from ..filter.filter_apply import apply_filters
+from filter.filter_apply import apply_filters
 
 
 def video_exporter_job(
@@ -21,7 +21,6 @@ def video_exporter_job(
     cap = cv2.VideoCapture(video_path)
     fourcc = cv2.VideoWriter_fourcc(*"mp4v")
     out = cv2.VideoWriter(save_path, fourcc, fps, frame_size)
-
 
     while True:
         ret, frame = cap.read()

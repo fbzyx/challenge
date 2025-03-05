@@ -1,18 +1,18 @@
 import multiprocessing
-from export_job import video_exporter_job
+from export.export_job import video_exporter_job
 
 
 def export_video_process(
-        video_path,
-        output_path,
-        fps,
-        frame_size,
-        blur_strength,
-        canny_threshold,
-        sepia_strength,
-        brightness_strength,
-        saturation_strength,
-        sharpen_strength,
+    video_path,
+    output_path,
+    fps,
+    frame_size,
+    blur_strength,
+    canny_threshold,
+    sepia_strength,
+    brightness_strength,
+    saturation_strength,
+    sharpen_strength,
 ):
     if not output_path:
         return

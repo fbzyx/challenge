@@ -1,9 +1,9 @@
-from filters.blur import blur_apply
-from filters.brightness import brightness_apply
-from filters.canny import canny_apply
-from filters.saturation import saturation_apply
-from filters.sepia import sepia_apply
-from filters.sharpen import sharpen_apply
+from filter.filters.blur import blur_apply
+from filter.filters.brightness import brightness_apply
+from filter.filters.canny import canny_apply
+from filter.filters.saturation import saturation_apply
+from filter.filters.sepia import sepia_apply
+from filter.filters.sharpen import sharpen_apply
 
 
 def apply_filters(
