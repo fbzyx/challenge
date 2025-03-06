@@ -1,1 +1,0 @@
-pyuic6 video_editor/app/ui/mainwindow.ui -o video_editor/app/ui//MainWindow.py

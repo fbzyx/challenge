@@ -11,7 +11,7 @@ from app.ui.MainWindow import Ui_MainWindow
 
 from load.load import file_loader
 from export.process import export_process
-from filter.filter import get_filtered_frame
+from filter.filter_frame import get_filtered_frame
 from models.dc_video import DCVideoData, DCFiltersParams, DCVideoExportParams
 
 
@@ -93,7 +93,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.btn_play_pause.setText("Play")
             self.update_time_label(0)
             self.slider_video.setValue(0)
-            #####
+            ##### change behaviour
             self.update_video_in_ui(self.first_frame)
             self.last_playing_frame = self.first_frame
 
@@ -125,7 +125,14 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             bytes_per_line,
             QImage.Format.Format_BGR888,
         )  # Format_RGB888 ?
-        pixmap = QPixmap.fromImage(q_img).scaledToHeight(300)
+        pixmap = QPixmap.fromImage(q_img).scaledToHeight(
+            300
+        )
+
+        # pixmap = QPixmap.fromImage(q_img).scaledToHeight(
+        #     (self.label_video.height())
+        # )
+
         self.label_video.setPixmap(pixmap)
 
         if self.is_playing:
@@ -144,7 +151,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             return
 
         ret, frame = self.video_data.cap.read()
-
         if not ret:
             self.timer.stop()
             self.is_playing = False
@@ -189,7 +195,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             total_frames=self.video_data.total_frames,
             input_path=self.video_data.input_path,
         )
-
         dc_export_params_data_for_proc = DCVideoExportParams(
             video_data=dc_video_data_for_proc,
             filter_params=dc_filter_params,

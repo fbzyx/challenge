@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import multiprocessing
 
-from filter.filter import get_filtered_frame
+from filter.filter_frame import get_filtered_frame
 from models.dc_video import DCVideoExportParams
 
 
