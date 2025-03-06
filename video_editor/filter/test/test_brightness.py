@@ -31,14 +31,18 @@ class TestBrightnessApply(unittest.TestCase):
         # Test if brightness increase respects the max limit (255)
         value = 200
         result = brightness_apply(self.image, value)
-        expected = np.full((100, 100, 3), 255, dtype=np.uint8)  # All values should be capped at 255
+        expected = np.full(
+            (100, 100, 3), 255, dtype=np.uint8
+        )  # All values should be capped at 255
         np.testing.assert_array_equal(result, expected)
 
     def test_brightness_apply_min_limit(self):
         # Test if brightness decrease respects the min limit (0)
         value = -200
         result = brightness_apply(self.image, value)
-        expected = np.full((100, 100, 3), 0, dtype=np.uint8)  # All values should be capped at 0
+        expected = np.full(
+            (100, 100, 3), 0, dtype=np.uint8
+        )  # All values should be capped at 0
         np.testing.assert_array_equal(result, expected)
 
 

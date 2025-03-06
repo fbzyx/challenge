@@ -1,5 +1,4 @@
 import unittest
-import cv2
 import numpy as np
 from filter.filters.sharpen import sharpen_apply
 
@@ -19,14 +18,18 @@ class TestSharpenApply(unittest.TestCase):
         value = 1
         result = sharpen_apply(self.image, value)
         self.assertEqual(result.shape, self.image.shape)
-        self.assertFalse(np.array_equal(result, self.image))  # Ensure the image changed slightly
+        self.assertFalse(
+            np.array_equal(result, self.image)
+        )  # Ensure the image changed slightly
 
     def test_sharpen_apply_high_intensity(self):
         # If value is high, the sharpening effect should be strong
         value = 5
         result = sharpen_apply(self.image, value)
         self.assertEqual(result.shape, self.image.shape)
-        self.assertFalse(np.array_equal(result, self.image))  # Ensure the image changed significantly
+        self.assertFalse(
+            np.array_equal(result, self.image)
+        )  # Ensure the image changed significantly
 
     def test_sharpen_apply_pixel_range(self):
         # Ensure values remain within the valid range (0-255)

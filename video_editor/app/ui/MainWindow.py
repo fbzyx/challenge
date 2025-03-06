@@ -13,7 +13,10 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(806, 600)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Policy.Preferred,
+            QtWidgets.QSizePolicy.Policy.Preferred,
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
@@ -42,11 +45,19 @@ class Ui_MainWindow(object):
         self.btn_export.setIcon(icon)
         self.btn_export.setObjectName("btn_export")
         self.horizontalLayout_5.addWidget(self.btn_export)
-        spacerItem = QtWidgets.QSpacerItem(562, 38, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        spacerItem = QtWidgets.QSpacerItem(
+            562,
+            38,
+            QtWidgets.QSizePolicy.Policy.Expanding,
+            QtWidgets.QSizePolicy.Policy.Minimum,
+        )
         self.horizontalLayout_5.addItem(spacerItem)
         self.verticalLayout_2.addWidget(self.frame)
         self.frame_3 = QtWidgets.QFrame(parent=self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Policy.Expanding,
+            QtWidgets.QSizePolicy.Policy.Expanding,
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.frame_3.sizePolicy().hasHeightForWidth())
@@ -57,9 +68,12 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.frame_3)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.label_video = QtWidgets.QLabel(parent=self.frame_3)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Policy.MinimumExpanding,
+            QtWidgets.QSizePolicy.Policy.Expanding,
+        )
         sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setVerticalStretch(1)
         sizePolicy.setHeightForWidth(self.label_video.sizePolicy().hasHeightForWidth())
         self.label_video.setSizePolicy(sizePolicy)
         self.label_video.setMinimumSize(QtCore.QSize(0, 0))
@@ -70,7 +84,10 @@ class Ui_MainWindow(object):
         self.label_video.setObjectName("label_video")
         self.horizontalLayout_2.addWidget(self.label_video)
         self.groupBox_3 = QtWidgets.QGroupBox(parent=self.frame_3)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Policy.Preferred,
+            QtWidgets.QSizePolicy.Policy.Preferred,
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.groupBox_3.sizePolicy().hasHeightForWidth())
@@ -79,7 +96,7 @@ class Ui_MainWindow(object):
         self.groupBox_3.setTitle("")
         self.groupBox_3.setObjectName("groupBox_3")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.groupBox_3)
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setContentsMargins(10, 10, 10, 0)
         self.verticalLayout.setObjectName("verticalLayout")
         self.label_brightness = QtWidgets.QLabel(parent=self.groupBox_3)
         self.label_brightness.setMinimumSize(QtCore.QSize(150, 0))
@@ -157,7 +174,12 @@ class Ui_MainWindow(object):
         self.slider_canny.setOrientation(QtCore.Qt.Orientation.Horizontal)
         self.slider_canny.setObjectName("slider_canny")
         self.verticalLayout.addWidget(self.slider_canny)
-        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        spacerItem1 = QtWidgets.QSpacerItem(
+            20,
+            40,
+            QtWidgets.QSizePolicy.Policy.Minimum,
+            QtWidgets.QSizePolicy.Policy.Expanding,
+        )
         self.verticalLayout.addItem(spacerItem1)
         self.horizontalLayout_2.addWidget(self.groupBox_3)
         self.verticalLayout_2.addWidget(self.frame_3)
@@ -185,7 +207,12 @@ class Ui_MainWindow(object):
         self.label_time = QtWidgets.QLabel(parent=self.frame_2)
         self.label_time.setObjectName("label_time")
         self.horizontalLayout.addWidget(self.label_time)
-        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        spacerItem2 = QtWidgets.QSpacerItem(
+            40,
+            20,
+            QtWidgets.QSizePolicy.Policy.Expanding,
+            QtWidgets.QSizePolicy.Policy.Minimum,
+        )
         self.horizontalLayout.addItem(spacerItem2)
         self.verticalLayout_2.addWidget(self.frame_2)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -194,6 +221,10 @@ class Ui_MainWindow(object):
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
+        font = QtGui.QFont()
+        font.setPointSize(8)
+        font.setItalic(True)
+        self.statusbar.setFont(font)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
 

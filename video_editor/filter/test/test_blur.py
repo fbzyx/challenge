@@ -20,7 +20,9 @@ class TestBlurApply(unittest.TestCase):
         value = 3
         result = blur_apply(self.image, value)
         self.assertEqual(result.shape, self.image.shape)
-        self.assertFalse(np.array_equal(result, self.image))  # Check that the image changed
+        self.assertFalse(
+            np.array_equal(result, self.image)
+        )  # Check that the image changed
 
     def test_blur_apply_negative_value(self):
         # If value is negative, it should return the same image (assuming no exception handling)

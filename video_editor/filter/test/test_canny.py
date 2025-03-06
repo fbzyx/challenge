@@ -1,5 +1,4 @@
 import unittest
-import cv2
 import numpy as np
 from filter.filters.canny import canny_apply
 
@@ -41,4 +40,3 @@ class TestCannyApply(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

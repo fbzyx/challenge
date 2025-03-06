@@ -5,24 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d94c86f6-3880-4399-8ad4-9c7bee5d6cc0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/video_editor/commands" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/filter/test/test_blur.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/filter/test/test_brightness.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/filter/test/test_canny.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/filter/test/test_saturation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/filter/test/test_sepia.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/filter/test/test_sharpen.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_editor/app/resize_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/video_editor/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/app/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/app/test.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/video_editor/app/ui/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/app/ui/MainWindow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/app/ui/command" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/app/ui/mainwindow.ui" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/app/ui/mainwindow.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/export/export.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/export/export.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/export/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/filter/filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/filter_frame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/filter/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/load/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/app/ui/mainwindow2.ui" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/app/ui/mainwindow2.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/filter/test/test_blur.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/test/test_blur.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/filter/test/test_brightness.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/test/test_brightness.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/filter/test/test_canny.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/test/test_canny.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/filter/test/test_saturation.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/test/test_saturation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/filter/test/test_sepia.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/test/test_sepia.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/filter/test/test_sharpen.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/test/test_sharpen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/models/dc_video.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/models/dc_video.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/videos/teste2.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/videos/teste2.mp4" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +46,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python tests.Python tests for test_filter_frame.TestGetFilteredFrame.executor": "Run",
     "Python tests.Python tests for test_sharpen.TestSharpenApply.test_sharpen_apply_high_intensity.executor": "Run",
     "Python tests.Python tests for test_sharpen.TestSharpenApply.test_sharpen_apply_invalid_value.executor": "Run",
     "Python tests.Python tests in test_blur.py.executor": "Run",
@@ -74,7 +69,7 @@
       <recent name="$PROJECT_DIR$/video_editor" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_sharpen.TestSharpenApply.test_sharpen_apply_invalid_value">
+  <component name="RunManager" selected="Python.run">
     <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="aquaticode_challenge" />
       <option name="ENV_FILES" value="" />
@@ -95,6 +90,21 @@
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_filter_frame.TestGetFilteredFrame" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="aquaticode_challenge" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/video_editor/filter/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_filter_frame.TestGetFilteredFrame&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Python tests for test_sharpen.TestSharpenApply.test_sharpen_apply_high_intensity" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
@@ -144,9 +154,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.run" />
+        <item itemvalue="Python tests.Python tests for test_filter_frame.TestGetFilteredFrame" />
         <item itemvalue="Python tests.Python tests for test_sharpen.TestSharpenApply.test_sharpen_apply_invalid_value" />
         <item itemvalue="Python tests.Python tests for test_sharpen.TestSharpenApply.test_sharpen_apply_high_intensity" />
-        <item itemvalue="Python.run" />
         <item itemvalue="Python tests.Python tests in test_blur.py" />
       </list>
     </recent_temporary>

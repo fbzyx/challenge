@@ -33,14 +33,18 @@ class TestSaturationApply(unittest.TestCase):
         value = 200
         result = saturation_apply(self.image, value)
         hsv = cv2.cvtColor(result, cv2.COLOR_BGR2HSV)
-        self.assertTrue(np.all(hsv[:, :, 1] <= 255))  # Ensure saturation does not exceed 255
+        self.assertTrue(
+            np.all(hsv[:, :, 1] <= 255)
+        )  # Ensure saturation does not exceed 255
 
     def test_saturation_apply_min_limit(self):
         # Test if saturation decrease respects the min limit (0)
         value = -200
         result = saturation_apply(self.image, value)
         hsv = cv2.cvtColor(result, cv2.COLOR_BGR2HSV)
-        self.assertTrue(np.all(hsv[:, :, 1] >= 0))  # Ensure saturation does not go below 0
+        self.assertTrue(
+            np.all(hsv[:, :, 1] >= 0)
+        )  # Ensure saturation does not go below 0
 
 
 if __name__ == "__main__":

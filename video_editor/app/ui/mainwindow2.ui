@@ -113,7 +113,7 @@
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
+           <verstretch>1</verstretch>
           </sizepolicy>
          </property>
          <property name="minimumSize">
@@ -161,13 +161,13 @@
            <number>-1</number>
           </property>
           <property name="leftMargin">
-           <number>0</number>
+           <number>10</number>
           </property>
           <property name="topMargin">
-           <number>0</number>
+           <number>10</number>
           </property>
           <property name="rightMargin">
-           <number>0</number>
+           <number>10</number>
           </property>
           <property name="bottomMargin">
            <number>0</number>
@@ -532,7 +532,14 @@
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+     <italic>true</italic>
+    </font>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

@@ -9,7 +9,7 @@ class DCVideoData:
     frame_size: Optional[Tuple[int, int]] = None
     total_frames: Optional[int] = None
     input_path: Optional[str] = None
-    cap: Optional[VideoCapture] = None  # cannot pass to subprocess since not pickeable
+    cap: Optional[VideoCapture] = None  # cannot pass to subprocess due to not pickeable
 
 
 @dataclass

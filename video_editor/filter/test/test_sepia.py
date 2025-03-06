@@ -1,5 +1,4 @@
 import unittest
-import cv2
 import numpy as np
 from filter.filters.sepia import sepia_apply
 
@@ -19,14 +18,18 @@ class TestSepiaApply(unittest.TestCase):
         value = 20
         result = sepia_apply(self.image, value)
         self.assertEqual(result.shape, self.image.shape)
-        self.assertFalse(np.array_equal(result, self.image))  # Ensure the image changed slightly
+        self.assertFalse(
+            np.array_equal(result, self.image)
+        )  # Ensure the image changed slightly
 
     def test_sepia_apply_high_intensity(self):
         # If value is high, the effect should be strong
         value = 100
         result = sepia_apply(self.image, value)
         self.assertEqual(result.shape, self.image.shape)
-        self.assertFalse(np.array_equal(result, self.image))  # Ensure the image changed significantly
+        self.assertFalse(
+            np.array_equal(result, self.image)
+        )  # Ensure the image changed significantly
 
     def test_sepia_apply_max_limit(self):
         # Ensure values remain within the valid range (0-255)
