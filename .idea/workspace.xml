@@ -5,18 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d94c86f6-3880-4399-8ad4-9c7bee5d6cc0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/video_editor/app/resize_handler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_editor/app/test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_editor/export/test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_editor/export/test/test_export.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_editor/export/test/test_process.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_editor/filter/test/test_filter_frame.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_editor/load/test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_editor/load/test/test_load.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_editor/models/type_dialogs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video_editor/models/type_status.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/app/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/app/application.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/video_editor/app/ui/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/app/ui/MainWindow.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/video_editor/app/ui/mainwindow2.ui" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/app/ui/mainwindow2.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/export/export.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/export/export.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/export/process.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/export/process.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/filter/filter_frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/filter_frame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/filter/filters/blur.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/filters/blur.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/filter/filters/brightness.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/filters/brightness.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/filter/filters/canny.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/filters/canny.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/filter/filters/saturation.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/filters/saturation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/filter/filters/sepia.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/filters/sepia.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/filter/filters/sharpen.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/filters/sharpen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/video_editor/filter/test/test_blur.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/test/test_blur.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/video_editor/filter/test/test_brightness.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/test/test_brightness.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/video_editor/filter/test/test_canny.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/test/test_canny.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/video_editor/filter/test/test_saturation.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/test/test_saturation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/video_editor/filter/test/test_sepia.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/test/test_sepia.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/video_editor/filter/test/test_sharpen.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/test/test_sharpen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/load/load.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/load/load.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/video_editor/models/dc_video.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/models/dc_video.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/run_app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/videos/teste2.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/videos/teste2.mp4" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,27 +71,56 @@
     "Python tests.Python tests for test_sharpen.TestSharpenApply.test_sharpen_apply_high_intensity.executor": "Run",
     "Python tests.Python tests for test_sharpen.TestSharpenApply.test_sharpen_apply_invalid_value.executor": "Run",
     "Python tests.Python tests in test_blur.py.executor": "Run",
+    "Python tests.Python tests in test_export.py.executor": "Run",
+    "Python tests.Python tests in test_filter_frame.py.executor": "Run",
+    "Python tests.Python tests in test_load.py.executor": "Run",
+    "Python.load.executor": "Run",
+    "Python.run (1).executor": "Run",
     "Python.run.executor": "Run",
+    "Python.run_app.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/franzbusche/Documents/Python/aquaticode_challenge/aquaticode_challenge/video_editor/filter/test"
+    "last_opened_file_path": "/Users/franzbusche/Documents/Python/aquaticode_challenge/aquaticode_challenge/video_editor/models"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/video_editor/models" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/video_editor" />
       <recent name="$PROJECT_DIR$/video_editor/filter/test" />
       <recent name="$PROJECT_DIR$/video_editor/app/ui" />
-      <recent name="$PROJECT_DIR$/video_editor" />
-      <recent name="$PROJECT_DIR$/video_editor/ui/qt" />
-      <recent name="$PROJECT_DIR$/video_editor/ui/export" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/video_editor/filter/test" />
       <recent name="$PROJECT_DIR$/video_editor" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.run">
-    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.run_app">
+    <configuration name="load" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="aquaticode_challenge" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/video_editor/load" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/video_editor/load/load.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run_app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="aquaticode_challenge" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -83,7 +133,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/video_editor/run.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/video_editor/run_app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -92,73 +142,42 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_filter_frame.TestGetFilteredFrame" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests in test_export.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="aquaticode_challenge" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/video_editor/filter/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/video_editor/export/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_filter_frame.TestGetFilteredFrame&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/video_editor/export/test/test_export.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_sharpen.TestSharpenApply.test_sharpen_apply_high_intensity" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests in test_load.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="aquaticode_challenge" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/video_editor/filter/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/video_editor/load/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_sharpen.TestSharpenApply.test_sharpen_apply_high_intensity&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_sharpen.TestSharpenApply.test_sharpen_apply_invalid_value" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="aquaticode_challenge" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/video_editor/filter/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_sharpen.TestSharpenApply.test_sharpen_apply_invalid_value&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests in test_blur.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="aquaticode_challenge" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/video_editor/filter/filters" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/video_editor/filter/test/test_blur.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/video_editor/load/test/test_load.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.run" />
-        <item itemvalue="Python tests.Python tests for test_filter_frame.TestGetFilteredFrame" />
-        <item itemvalue="Python tests.Python tests for test_sharpen.TestSharpenApply.test_sharpen_apply_invalid_value" />
-        <item itemvalue="Python tests.Python tests for test_sharpen.TestSharpenApply.test_sharpen_apply_high_intensity" />
-        <item itemvalue="Python tests.Python tests in test_blur.py" />
+        <item itemvalue="Python.run_app" />
+        <item itemvalue="Python tests.Python tests in test_load.py" />
+        <item itemvalue="Python.load" />
+        <item itemvalue="Python tests.Python tests in test_export.py" />
       </list>
     </recent_temporary>
   </component>

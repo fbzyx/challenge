@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 from typing import Tuple, Optional
 from cv2 import VideoCapture
+import numpy.typing as npt
 
 
 @dataclass
@@ -9,7 +10,9 @@ class DCVideoData:
     frame_size: Optional[Tuple[int, int]] = None
     total_frames: Optional[int] = None
     input_path: Optional[str] = None
-    cap: Optional[VideoCapture] = None  # cannot pass to subprocess due to not pickeable
+    cap: Optional[VideoCapture] = None
+    last_playing_frame: Optional[npt.NDArray] = None
+    first_frame: Optional[npt.NDArray] = None
 
 
 @dataclass
@@ -25,5 +28,5 @@ class DCFiltersParams:
 @dataclass
 class DCVideoExportParams:
     filter_params: Optional[DCFiltersParams] = None
-    video_data: Optional[DCVideoData] = None
     output_path: Optional[str] = None
+    input_path: Optional[str] = None

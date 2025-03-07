@@ -52,6 +52,14 @@ class Ui_MainWindow(object):
             QtWidgets.QSizePolicy.Policy.Minimum,
         )
         self.horizontalLayout_5.addItem(spacerItem)
+        self.label_fps = QtWidgets.QLabel(parent=self.frame)
+        self.label_fps.setMinimumSize(QtCore.QSize(80, 0))
+        self.label_fps.setObjectName("label_fps")
+        self.horizontalLayout_5.addWidget(self.label_fps)
+        self.label_resolution = QtWidgets.QLabel(parent=self.frame)
+        self.label_resolution.setMinimumSize(QtCore.QSize(180, 0))
+        self.label_resolution.setObjectName("label_resolution")
+        self.horizontalLayout_5.addWidget(self.label_resolution)
         self.verticalLayout_2.addWidget(self.frame)
         self.frame_3 = QtWidgets.QFrame(parent=self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(
@@ -69,7 +77,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.label_video = QtWidgets.QLabel(parent=self.frame_3)
         sizePolicy = QtWidgets.QSizePolicy(
-            QtWidgets.QSizePolicy.Policy.MinimumExpanding,
+            QtWidgets.QSizePolicy.Policy.Expanding,
             QtWidgets.QSizePolicy.Policy.Expanding,
         )
         sizePolicy.setHorizontalStretch(0)
@@ -222,7 +230,7 @@ class Ui_MainWindow(object):
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
         font = QtGui.QFont()
-        font.setPointSize(8)
+        font.setPointSize(9)
         font.setItalic(True)
         self.statusbar.setFont(font)
         self.statusbar.setObjectName("statusbar")
@@ -236,6 +244,8 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.btn_select.setText(_translate("MainWindow", "Select Video"))
         self.btn_export.setText(_translate("MainWindow", "Export"))
+        self.label_fps.setText(_translate("MainWindow", "FPS: -"))
+        self.label_resolution.setText(_translate("MainWindow", "Resolution: -"))
         self.label_video.setText(_translate("MainWindow", "No file selected"))
         self.label_brightness.setText(_translate("MainWindow", "Brightness"))
         self.label_saturation.setText(_translate("MainWindow", "Saturation"))

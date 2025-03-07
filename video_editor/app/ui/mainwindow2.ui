@@ -90,6 +90,32 @@
          </property>
         </spacer>
        </item>
+       <item>
+        <widget class="QLabel" name="label_fps">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>FPS: -</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_resolution">
+         <property name="minimumSize">
+          <size>
+           <width>180</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Resolution: -</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </item>
@@ -535,7 +561,7 @@
   <widget class="QStatusBar" name="statusbar">
    <property name="font">
     <font>
-     <pointsize>8</pointsize>
+     <pointsize>9</pointsize>
      <italic>true</italic>
     </font>
    </property>
