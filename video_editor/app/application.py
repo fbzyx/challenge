@@ -52,7 +52,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # resume after slider is released
         self.slider_video.sliderReleased.connect(self.move_video_to_slider_position)
 
-        self.statusbar.showMessage("Ready")
+        self.statusbar.showMessage("No file selected")
 
         # timer for video playback
         self.timer = QTimer()
@@ -60,7 +60,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.timer.timeout.connect(self.update_frame_according_app_state)
 
         # video is playing status flag
-        self.is_playing = False
+        self.is_playing: bool = False
         self.export_process: Optional[multiprocessing.Process] = None
         # dataclass object for storing video related values
         self.video_data = DCVideoData()
@@ -93,10 +93,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.video_data.input_path = file_name
             # call function to load the video and its parameters
             self.video_data, self.load_status = file_loader(self.video_data)
+            # process status returned from video load
             self.digest_load_status(self.load_status)
-
-            if self.load_status is TypeLoadStatus.ok:
-                self.reset_values_for_new_video()
 
     def reset_values_for_new_video(self) -> None:
 
@@ -131,10 +129,32 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.update_video_in_ui(frame)
 
     def digest_load_status(self, status: TypeLoadStatus) -> None:
+        """
+        Function to digest returned video load status.
+        :param status: the video load response status
+        :return: None
+        """
+        # show dialog if error
         if status is TypeLoadStatus.error:
+            msg = f"Error: Could not open video file {self.video_data.input_path}. It may be corrupted or missing."
             self.show_user_dialog(
-                TypeDialog.error, "File Error", "An error occured importing the file"
+                TypeDialog.error,
+                "File Error",
+                msg,
             )
+            self.video_data.input_path = None
+        # if video was loaded ok
+        elif status is TypeLoadStatus.ok:
+            msg = f"""
+            Video loaded succesfully!
+            
+            FPS: {self.video_data.fps}
+            Resolution: {self.video_data.frame_size} px.
+            Duration: {self.video_data.total_time} sec.
+            Nr. of Frames: {self.video_data.total_frames}
+            """
+            self.show_user_dialog(TypeDialog.info, "Video Loaded", msg)
+            self.reset_values_for_new_video()
 
     def show_user_dialog(
         self,
@@ -142,6 +162,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         title: Optional[str] = None,
         message: Optional[str] = None,
     ) -> None:
+        """
+        Function that triggers an ui dialog.
+        :param dialog_type: type of dialog to trigger
+        :param title: dialog title
+        :param message: dialog msg
+        :return: None
+        """
 
         if dialog_type.info:
             QMessageBox.information(self, title, message)
@@ -242,6 +269,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.label_time.setText(
             f"{current_min:02}:{current_sec:02} / {total_min:02}:{total_sec:02}"
         )
+        # store video time values in data object
+        self.video_data.total_time = total_time
+        self.video_data.current_time = current_time
 
     def move_video_to_slider_position(self) -> None:
         """
@@ -269,7 +299,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         # get the shape of the numpy array
         height, width, channel = frame.shape
-        # bytes_per_line = width×bytes pro pixel
+        # bytes_per_line = width×bytes pro pixel (3, rgb)
         bytes_per_line = 3 * width
         # the QImage class provides a hardware-independent image representation
         # that allows direct access to the pixel data. (from docs)

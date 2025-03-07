@@ -13,6 +13,8 @@ class DCVideoData:
     cap: Optional[VideoCapture] = None
     last_playing_frame: Optional[npt.NDArray] = None
     first_frame: Optional[npt.NDArray] = None
+    total_time: Optional[int] = None
+    current_time: Optional[int] = None
 
 
 @dataclass

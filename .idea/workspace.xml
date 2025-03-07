@@ -5,39 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d94c86f6-3880-4399-8ad4-9c7bee5d6cc0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/video_editor/app/test/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/export/test/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/export/test/test_export.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/export/test/test_process.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/filter/test/test_filter_frame.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/load/test/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/load/test/test_load.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/models/type_dialogs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video_editor/models/type_status.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/app/application.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/app/ui/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/app/ui/MainWindow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/app/ui/mainwindow2.ui" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/app/ui/mainwindow2.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/export/export.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/export/export.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/export/process.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/export/process.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/filter/filter_frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/filter_frame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/filter/filters/blur.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/filters/blur.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/filter/filters/brightness.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/filters/brightness.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/filter/filters/canny.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/filters/canny.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/filter/filters/saturation.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/filters/saturation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/filter/filters/sepia.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/filters/sepia.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/filter/filters/sharpen.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/filters/sharpen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/filter/test/test_blur.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/test/test_blur.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/filter/test/test_brightness.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/test/test_brightness.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/filter/test/test_canny.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/test/test_canny.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/filter/test/test_saturation.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/test/test_saturation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/filter/test/test_sepia.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/test/test_sepia.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/filter/test/test_sharpen.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/filter/test/test_sharpen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/app/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/app/application.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/video_editor/load/load.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/load/load.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/video_editor/models/dc_video.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/models/dc_video.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_editor/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/run_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video_editor/run_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_editor/run_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videos/teste.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/videos/teste.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/videos/teste2.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/videos/teste2.mp4" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
