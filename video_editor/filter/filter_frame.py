@@ -1,11 +1,12 @@
+import numpy.typing as npt
+from models.dc_video import DCFiltersParams
+
 from filter.filters.blur import blur_apply
 from filter.filters.brightness import brightness_apply
 from filter.filters.canny import canny_apply
 from filter.filters.saturation import saturation_apply
 from filter.filters.sepia import sepia_apply
 from filter.filters.sharpen import sharpen_apply
-from models.dc_video import DCFiltersParams
-import numpy.typing as npt
 
 
 def get_filtered_frame(

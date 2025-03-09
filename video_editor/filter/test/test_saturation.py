@@ -1,6 +1,8 @@
 import unittest
+
 import cv2
 import numpy as np
+
 from filter.filters.saturation import saturation_apply
 
 
@@ -23,14 +25,18 @@ class TestSaturationApply(unittest.TestCase):
         value = 50
         result = saturation_apply(self.image, value)
         self.assertEqual(result.shape, self.image.shape)
-        self.assertFalse(np.array_equal(result, self.image))  # Ensure the image changed
+        self.assertFalse(
+            np.array_equal(result, self.image)
+        )  # Ensure the image changed
 
     def test_saturation_apply_decrease(self):
         # if value < 0, saturation should decrease
         value = -50
         result = saturation_apply(self.image, value)
         self.assertEqual(result.shape, self.image.shape)
-        self.assertFalse(np.array_equal(result, self.image))  # Ensure the image changed
+        self.assertFalse(
+            np.array_equal(result, self.image)
+        )  # Ensure the image changed
 
     def test_saturation_apply_max_limit(self):
         # test if saturation increase respects the max limit (255)

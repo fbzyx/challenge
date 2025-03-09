@@ -1,5 +1,7 @@
 import unittest
+
 import numpy as np
+
 from filter.filters.brightness import brightness_apply
 
 
@@ -21,14 +23,18 @@ class TestBrightnessApply(unittest.TestCase):
         # if value > 0, the function should increase brightness
         value = 50
         result = brightness_apply(self.image, value)
-        expected = np.clip(self.image.astype(np.int16) + value, 0, 255).astype(np.uint8)
+        expected = np.clip(self.image.astype(np.int16) + value, 0, 255).astype(
+            np.uint8
+        )
         np.testing.assert_array_equal(result, expected)
 
     def test_brightness_apply_decrease(self):
         # if value < 0, the function should decrease brightness
         value = -50
         result = brightness_apply(self.image, value)
-        expected = np.clip(self.image.astype(np.int16) + value, 0, 255).astype(np.uint8)
+        expected = np.clip(self.image.astype(np.int16) + value, 0, 255).astype(
+            np.uint8
+        )
         np.testing.assert_array_equal(result, expected)
 
     def test_brightness_apply_max_limit(self):

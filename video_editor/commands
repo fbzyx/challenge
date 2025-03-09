@@ -1,2 +1,0 @@
-python -m unittest discover -s video_editor
-pyuic6 video_editor/app/ui/mainwindow.ui -o video_editor/app/ui//MainWindow.py

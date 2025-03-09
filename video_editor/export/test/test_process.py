@@ -1,7 +1,9 @@
 import unittest
-from unittest.mock import patch, MagicMock
-from export.export import video_exporter_func
+from unittest.mock import MagicMock, patch
+
 from models.dc_video import DCVideoExportParams
+
+from export.export import video_exporter_func
 from export.process import export_process
 
 
@@ -28,7 +30,8 @@ class TestExportProcess(unittest.TestCase):
 
         # assertions
         mock_process.assert_called_once_with(
-            target=video_exporter_func, args=(export_params,)
+            target=video_exporter_func,
+            args=(export_params,),
         )
         # ensure process starts
         mock_process_instance.start.assert_called_once()

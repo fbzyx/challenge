@@ -1,16 +1,21 @@
 import unittest
-import numpy as np
+
 import cv2
-from filter.filter_frame import get_filtered_frame
+import numpy as np
 from models.dc_video import DCFiltersParams
+
+from filter.filter_frame import get_filtered_frame
 
 
 class TestGetFilteredFrame(unittest.TestCase):
-
     def setUp(self):
         """Create a sample image (frame) for testing."""
         # create a dummy image (image of size 100x100 with 3 color channels)
-        shape = (100, 100, 3)  # 100x100 image with 3 color channels
+        shape = (
+            100,
+            100,
+            3,
+        )  # 100x100 image with 3 color channels
         # generate random integers between 0 and 255
         self.frame = np.random.randint(0, 256, shape, dtype=np.uint8)
 

@@ -1,7 +1,9 @@
 import multiprocessing
-from export.export import video_exporter_func
-from models.dc_video import DCVideoExportParams
 from typing import Union
+
+from models.dc_video import DCVideoExportParams
+
+from export.export import video_exporter_func
 
 
 def export_process(

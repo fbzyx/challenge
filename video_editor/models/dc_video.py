@@ -1,7 +1,10 @@
 from dataclasses import dataclass, field
-from typing import Tuple, Optional
-from cv2 import VideoCapture
+from typing import Optional, Tuple
+
 import numpy.typing as npt
+from cv2 import VideoCapture
+
+from models.type_status import TypeVideoTypeStatus
 
 
 @dataclass
@@ -15,6 +18,9 @@ class DCVideoData:
     first_frame: Optional[npt.NDArray] = None
     total_time: Optional[int] = None
     current_time: Optional[int] = None
+    video_status: Optional[TypeVideoTypeStatus] = (
+        TypeVideoTypeStatus.video_undefined
+    )
 
 
 @dataclass

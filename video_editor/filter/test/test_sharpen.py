@@ -1,5 +1,7 @@
 import unittest
+
 import numpy as np
+
 from filter.filters.sharpen import sharpen_apply
 
 

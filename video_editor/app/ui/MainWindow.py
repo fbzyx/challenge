@@ -19,7 +19,9 @@ class Ui_MainWindow(object):
         )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            MainWindow.sizePolicy().hasHeightForWidth()
+        )
         MainWindow.setSizePolicy(sizePolicy)
         MainWindow.setMinimumSize(QtCore.QSize(0, 0))
         MainWindow.setMaximumSize(QtCore.QSize(16777215, 16777215))
@@ -68,7 +70,9 @@ class Ui_MainWindow(object):
         )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.frame_3.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.frame_3.sizePolicy().hasHeightForWidth()
+        )
         self.frame_3.setSizePolicy(sizePolicy)
         self.frame_3.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
@@ -82,7 +86,9 @@ class Ui_MainWindow(object):
         )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(1)
-        sizePolicy.setHeightForWidth(self.label_video.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.label_video.sizePolicy().hasHeightForWidth()
+        )
         self.label_video.setSizePolicy(sizePolicy)
         self.label_video.setMinimumSize(QtCore.QSize(0, 0))
         self.label_video.setAutoFillBackground(False)
@@ -98,7 +104,9 @@ class Ui_MainWindow(object):
         )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.groupBox_3.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.groupBox_3.sizePolicy().hasHeightForWidth()
+        )
         self.groupBox_3.setSizePolicy(sizePolicy)
         self.groupBox_3.setMaximumSize(QtCore.QSize(200, 16777215))
         self.groupBox_3.setTitle("")
@@ -167,7 +175,9 @@ class Ui_MainWindow(object):
         self.slider_sharpen.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.slider_sharpen.setMaximum(5)
         self.slider_sharpen.setOrientation(QtCore.Qt.Orientation.Horizontal)
-        self.slider_sharpen.setTickPosition(QtWidgets.QSlider.TickPosition.NoTicks)
+        self.slider_sharpen.setTickPosition(
+            QtWidgets.QSlider.TickPosition.NoTicks
+        )
         self.slider_sharpen.setObjectName("slider_sharpen")
         self.verticalLayout.addWidget(self.slider_sharpen)
         self.label_canny = QtWidgets.QLabel(parent=self.groupBox_3)
@@ -241,7 +251,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Code Challenge"))
         self.btn_select.setText(_translate("MainWindow", "Select Video"))
         self.btn_export.setText(_translate("MainWindow", "Export"))
         self.label_fps.setText(_translate("MainWindow", "FPS: -"))

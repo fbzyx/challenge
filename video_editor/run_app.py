@@ -1,7 +1,8 @@
-import sys
 import multiprocessing
-from PyQt6 import QtWidgets
+import sys
+
 from app.application import MainWindow
+from PyQt6 import QtWidgets
 
 if __name__ == "__main__":
     multiprocessing.freeze_support()

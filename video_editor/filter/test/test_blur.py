@@ -1,5 +1,7 @@
 import unittest
+
 import numpy as np
+
 from filter.filters.blur import blur_apply
 
 
@@ -10,7 +12,11 @@ class TestBlurApply(unittest.TestCase):
 
     def setUp(self):
         # create a dummy image (image of size 100x100 with 3 color channels)
-        shape = (100, 100, 3)  # 100x100 image with 3 color channels
+        shape = (
+            100,
+            100,
+            3,
+        )  # 100x100 image with 3 color channels
         # generate random integers between 0 and 255
         self.image = np.random.randint(0, 256, shape, dtype=np.uint8)
 

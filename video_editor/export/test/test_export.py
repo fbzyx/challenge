@@ -1,13 +1,17 @@
-import unittest
 import os
+import unittest
+
 import cv2
 import numpy as np
-from models.dc_video import DCVideoExportParams, DCFiltersParams
+from models.dc_video import (
+    DCFiltersParams,
+    DCVideoExportParams,
+)
+
 from export.export import video_exporter_func
 
 
 class TestVideoExporterFunc(unittest.TestCase):
-
     def setUp(self):
         """Create a temporary video file for testing."""
         self.input_video = "test_input.mp4"

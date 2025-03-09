@@ -1,25 +1,30 @@
+import multiprocessing
+from typing import Optional
+
 import cv2
+import numpy.typing as npt
+from export.process import export_process
+from filter.filter_frame import get_filtered_frame
+from load.load import file_loader
+from models.dc_video import (
+    DCFiltersParams,
+    DCVideoData,
+    DCVideoExportParams,
+)
+from models.type_dialogs import TypeDialog
+from models.type_status import (
+    TypeLoadStatus,
+    TypeVideoTypeStatus,
+)
 from PyQt6 import QtWidgets
-from PyQt6.QtGui import QImage, QPixmap
 from PyQt6.QtCore import QTimer
+from PyQt6.QtGui import QImage, QPixmap
 from PyQt6.QtWidgets import (
     QFileDialog,
     QMessageBox,
 )
+
 from app.ui.MainWindow import Ui_MainWindow
-
-from load.load import file_loader
-from export.process import export_process
-from filter.filter_frame import get_filtered_frame
-from models.dc_video import DCVideoData, DCFiltersParams, DCVideoExportParams
-from models.type_status import TypeLoadStatus
-from models.type_dialogs import TypeDialog
-
-# from app.resize_handler import resize_handler
-
-import multiprocessing
-from typing import Optional
-import numpy.typing as npt
 
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -37,21 +42,30 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.btn_stop.clicked.connect(self.stop_video)
         self.btn_export.clicked.connect(self.export_video_to_file)
         # filter slider events
-        self.slider_blur.valueChanged.connect(self.update_frame_according_app_state)
-        self.slider_canny.valueChanged.connect(self.update_frame_according_app_state)
-        self.slider_sepia.valueChanged.connect(self.update_frame_according_app_state)
+        self.slider_blur.valueChanged.connect(
+            self.update_frame_according_app_state
+        )
+        self.slider_canny.valueChanged.connect(
+            self.update_frame_according_app_state
+        )
+        self.slider_sepia.valueChanged.connect(
+            self.update_frame_according_app_state
+        )
         self.slider_brightness.valueChanged.connect(
             self.update_frame_according_app_state
         )
         self.slider_saturation.valueChanged.connect(
             self.update_frame_according_app_state
         )
-        self.slider_sharpen.valueChanged.connect(self.update_frame_according_app_state)
+        self.slider_sharpen.valueChanged.connect(
+            self.update_frame_according_app_state
+        )
         # pause video while position slider is being moved
         self.slider_video.sliderPressed.connect(self.pause_video)
         # resume after slider is released
-        self.slider_video.sliderReleased.connect(self.move_video_to_slider_position)
-
+        self.slider_video.sliderReleased.connect(
+            self.move_video_to_slider_position
+        )
         self.statusbar.showMessage("No file selected")
 
         # timer for video playback
@@ -85,7 +99,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         # get input file filename
         file_name, _ = QFileDialog.getOpenFileName(
-            self, "Select Video", "", "Video Files (*.mp4 *.avi *.mov)"
+            self,
+            "Select Video",
+            "",
+            "Video Files (*.mp4 *.avi *.mov)",
         )
         # if a file is selected
         if file_name:
@@ -97,7 +114,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.digest_load_status(self.load_status)
 
     def reset_values_for_new_video(self) -> None:
-
         # display video input path at bottom of ui
         self.statusbar.showMessage(self.video_data.input_path)
         # set the range for the video position slider according to frame count
@@ -112,10 +128,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.btn_play_pause.setText("Play")
         # set time label back to 00:00
         self.update_time_label(0)
-
+        # set text fro fps and reoslution labels
         self.label_fps.setText(f"FPS: {self.video_data.fps}")
-        self.label_resolution.setText(f"Resolution: {self.video_data.frame_size}")
-
+        self.label_resolution.setText(
+            f"Resolution: {self.video_data.frame_size[0]} x {self.video_data.frame_size[1]} px."
+        )
         # get only first frame for display in video area
         # as video placeholder until video is started
         ret, frame = self.video_data.cap.read()
@@ -128,6 +145,32 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # put first filtered frame in video ui place.
         self.update_video_in_ui(frame)
 
+    def reset_app_values_invalid_file(self) -> None:
+        """
+        Function called when video file is invalid.
+        Set the ui and app values for the invalid file.
+        Like reset FPS and Resoulution labels and qstatus text.
+        :return: None
+        """
+        self.statusbar.showMessage("Invalid video file.")
+        self.slider_video.setRange(0, 0)
+        self.slider_video.setValue(0)
+        self.slider_video.setEnabled(True)
+        self.is_playing = False
+        self.btn_play_pause.setText("Play")
+        self.label_time.setText("00:00 / 00:00")
+        self.label_video.setText("Invalid video file")
+        self.label_fps.setText(f"FPS: -")
+        self.label_resolution.setText(f"Resolution: -")
+        self.video_data.cap = None
+        self.video_data.fps = None
+        self.video_data.total_time = None
+        self.video_data.total_frames = None
+        self.video_data.current_time = None
+        self.video_data.first_frame = None
+        self.video_data.last_playing_frame = None
+        self.video_data.frame_size = None
+
     def digest_load_status(self, status: TypeLoadStatus) -> None:
         """
         Function to digest returned video load status.
@@ -136,25 +179,44 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         """
         # show dialog if error
         if status is TypeLoadStatus.error:
+            # show msg with file name that could not be loaded
+            # ### messages should be built in an extra function
             msg = f"Error: Could not open video file {self.video_data.input_path}. It may be corrupted or missing."
             self.show_user_dialog(
                 TypeDialog.error,
                 "File Error",
                 msg,
             )
+            # delete path from dataclass object
             self.video_data.input_path = None
+            # reset app and ui values since video file is not valid
+            self.reset_app_values_invalid_file()
         # if video was loaded ok
         elif status is TypeLoadStatus.ok:
+            # set app and ui values for new video
+            self.reset_values_for_new_video()
+            # show msg with some file information
+            # messages should be built in an extra function
             msg = f"""
-            Video loaded succesfully!
+            Video loaded successfully!
             
             FPS: {self.video_data.fps}
-            Resolution: {self.video_data.frame_size} px.
+            Resolution: {self.video_data.frame_size[0]} x {self.video_data.frame_size[1]} px.
             Duration: {self.video_data.total_time} sec.
             Nr. of Frames: {self.video_data.total_frames}
             """
-            self.show_user_dialog(TypeDialog.info, "Video Loaded", msg)
-            self.reset_values_for_new_video()
+
+            if self.video_data.video_status is TypeVideoTypeStatus.video_ok:
+                self.show_user_dialog(TypeDialog.info, "Video Loaded", msg)
+
+            elif (
+                self.video_data.video_status
+                is TypeVideoTypeStatus.video_too_short
+            ):
+                msg += """\nWarning: Video is very short!"""
+                self.show_user_dialog(TypeDialog.warning, "Video Loaded", msg)
+
+            # elif self.video_data.video_status is something_else: ....
 
     def show_user_dialog(
         self,
@@ -170,11 +232,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         :return: None
         """
 
-        if dialog_type.info:
+        if dialog_type is TypeDialog.info:
             QMessageBox.information(self, title, message)
-        elif dialog_type.error:
+        elif dialog_type is TypeDialog.error:
             QMessageBox.critical(self, title, message)
-        elif dialog_type.warning:
+        elif dialog_type is TypeDialog.warning:
             QMessageBox.warning(self, title, message)
 
     def play_pause_video(self) -> None:
@@ -281,7 +343,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # if there is a video
         if self.video_data.cap:
             # set CAP_PROP_POS_FRAMES property to slider value
-            self.video_data.cap.set(cv2.CAP_PROP_POS_FRAMES, self.slider_video.value())
+            self.video_data.cap.set(
+                cv2.CAP_PROP_POS_FRAMES,
+                self.slider_video.value(),
+            )
             # update frame shown in ui according app state and filter values
             self.update_frame_according_app_state()
             # resume video playback (video is paused with
@@ -314,7 +379,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         # scale the image to a height of 300
         # better would be to scale in proportion of container size.
-        pixmap = QPixmap.fromImage(q_img).scaledToHeight(300)
+        pixmap = QPixmap.fromImage(q_img).scaledToHeight(400)
 
         # pixmap = QPixmap.fromImage(q_img).scaledToHeight(
         #     (self.label_video.height())
@@ -326,13 +391,14 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # if video is playing
         if self.is_playing:
             # update video position bar
-            current_frame = int(self.video_data.cap.get(cv2.CAP_PROP_POS_FRAMES))
+            current_frame = int(
+                self.video_data.cap.get(cv2.CAP_PROP_POS_FRAMES)
+            )
             self.slider_video.setValue(current_frame)
             # update the time shown in ui
             self.update_time_label(current_frame)
 
     def update_frame_according_app_state(self) -> None:
-
         # if no video capture (cv2.VideoCapture) then do nothing and return
         if self.video_data.cap is None:
             return
@@ -370,7 +436,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # pass filterd frame to ui update function
         self.update_video_in_ui(frame)
 
-    def get_filter_values_from_widgets(self) -> DCFiltersParams:
+    def get_filter_values_from_widgets(
+        self,
+    ) -> DCFiltersParams:
         """
         Function that read current values from filter sliders.
         :return: DCFiltersParams, Dataclass object with all filter values.
@@ -388,7 +456,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # return
         return dc_filter_params
 
-    def get_filter_values_and_apply_to_frame(self, frame: npt.NDArray) -> npt.NDArray:
+    def get_filter_values_and_apply_to_frame(
+        self, frame: npt.NDArray
+    ) -> npt.NDArray:
         """
         Function that call other function to read filter values from sliders.
         With the filter values other function is called to filter the frame.
@@ -414,13 +484,18 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         if not self.video_data.input_path:
             # Show an ui warning message to user and return
             self.show_user_dialog(
-                TypeDialog.warning, "No Video Selected", "Please select a video first."
+                TypeDialog.warning,
+                "No Video Selected",
+                "Please select a video first.",
             )
             return
 
         # get the output filename.
         save_path, _ = QFileDialog.getSaveFileName(
-            self, "Save Processed Video", "", "MP4 Files (*.mp4)"
+            self,
+            "Save Processed Video",
+            "",
+            "MP4 Files (*.mp4)",
         )
 
         if not save_path:

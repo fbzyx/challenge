@@ -1,0 +1,9 @@
+python -m unittest discover -s video_editor
+pyuic6 video_editor/app/ui/mainwindow2.ui -o video_editor/app/ui//MainWindow.py
+ruff format .
+black .
+ruff check --select I --fix
+ruff format
+
+pyinstaller --onefile -w video_editor/run_app.py
+

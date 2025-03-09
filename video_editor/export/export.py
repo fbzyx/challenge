@@ -1,10 +1,11 @@
 import cv2
-
 from filter.filter_frame import get_filtered_frame
 from models.dc_video import DCVideoExportParams
 
 
-def video_exporter_func(export_params_data: DCVideoExportParams) -> None:
+def video_exporter_func(
+    export_params_data: DCVideoExportParams,
+) -> None:
     """
     Worker function called to export a video.
     The video from input_path is filtered with given params and saved in output_path video.
