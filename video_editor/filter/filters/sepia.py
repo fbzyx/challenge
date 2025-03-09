@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import numpy.typing as npt
 
+# standard matrix for sepia filter
 sepia_matrix = np.array(
     [
         [0.272, 0.534, 0.131],
