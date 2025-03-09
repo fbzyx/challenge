@@ -12,8 +12,6 @@ The first option is to install Python 3.9, with pip install all the requirements
 
 The second way is to run a packaged application shipped within the folder. In this case you can run the packaged application without installing a Python interpreter or any modules.
 
-**Since the bundled application was compiled on a MAC OS machine with Pyinstaller, the bundled application can only be run on another MAC OS machine (with Apple silicon)**.
-
 ### Executing app with python 3.9
 
 The application was developed with Python 3.9
@@ -43,7 +41,9 @@ In the video folder there is a collection of videos so that you can test the app
 
 ### Executing app on MAC OS (with Apple silicon)
 
-In the /dist folder, double click on run_app. Note that it may take several seconds to start (I don't know why, but about 30 seconds).
+In the /dist folder there are two files, double click on one of them. Both have the name run_app but one runs in terminal and the other is an .app file for MAC OS. Note that it may take several seconds to start (I don't know why, but about 30 seconds).
+**Since the bundled application was compiled on a MAC OS machine with Pyinstaller, the bundled application can only be run on another MAC OS machine (with Apple silicon)**.
+
 
 ## Features
 
