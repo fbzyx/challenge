@@ -42,24 +42,14 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.btn_stop.clicked.connect(self.stop_video)
         self.btn_export.clicked.connect(self.export_video_to_file)
         # filter slider events
-        self.slider_blur.valueChanged.connect(
-            self.update_frame_according_app_state
-        )
-        self.slider_canny.valueChanged.connect(
-            self.update_frame_according_app_state
-        )
-        self.slider_sepia.valueChanged.connect(
-            self.update_frame_according_app_state
-        )
-        self.slider_brightness.valueChanged.connect(
-            self.update_frame_according_app_state
-        )
-        self.slider_saturation.valueChanged.connect(
-            self.update_frame_according_app_state
-        )
-        self.slider_sharpen.valueChanged.connect(
-            self.update_frame_according_app_state
-        )
+        self.slider_blur.valueChanged.connect(self.callback_filter_update)
+        self.slider_canny.valueChanged.connect(self.callback_filter_update)
+        self.slider_sepia.valueChanged.connect(self.callback_filter_update)
+        self.slider_brightness.valueChanged.connect(self.callback_filter_update)
+        self.slider_saturation.valueChanged.connect(self.callback_filter_update)
+        self.slider_sharpen.valueChanged.connect(self.callback_filter_update)
+        # dial hue slider events
+        self.dial_hue.valueChanged.connect(self.callback_filter_update)
         # pause video while position slider is being moved
         self.slider_video.sliderPressed.connect(self.pause_video)
         # resume after slider is released
@@ -71,7 +61,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # timer for video playback
         self.timer = QTimer()
         # call funtion to display a new video frame after timeout time
-        self.timer.timeout.connect(self.update_frame_according_app_state)
+        self.timer.timeout.connect(self.trigger_update_frame)
 
         # video is playing status flag
         self.is_playing: bool = False
@@ -348,7 +338,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.slider_video.value(),
             )
             # update frame shown in ui according app state and filter values
-            self.update_frame_according_app_state()
+            self.trigger_update_frame()
             # resume video playback (video is paused with
             # callback when slider is clicked)
             self.play_pause_video()
@@ -398,27 +388,46 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             # update the time shown in ui
             self.update_time_label(current_frame)
 
-    def update_frame_according_app_state(self) -> None:
+    def callback_filter_update(self) -> None:
+        """
+        Callback function called when filter value change.
+        Do frame update only if video is not playing.
+        If video is playing, then update will happen automatically
+        when self.timer times out and function trigger_update_frame is called.
+        :return:
+        """
+        # if no video capture (cv2.VideoCapture) then do nothing and return
+        if self.video_data.cap is None:
+            return
+        # if video is playing, then do nothing. Return
+        # frame with new filter values will be automatically updated
+        # when self.timer times out
+        if self.video_data.last_playing_frame is None:
+            return
+
+        if self.is_playing:
+            return
+
+        # Take the last frame displayed and apply the filters and update
+        # the ui to show the filtered frame.
+        # filter last frame
+        frame = self.get_filter_values_and_apply_to_frame(
+            self.video_data.last_playing_frame
+        )
+        # pass filterd frame to ui update function
+        self.update_video_in_ui(frame)
+
+    def trigger_update_frame(self) -> None:
+        """
+        Funtion called by self.timer timeout to update video frame.
+        Timeout is calculated using fps: 1000 / self.video_data.fps
+        :return: None
+        """
         # if no video capture (cv2.VideoCapture) then do nothing and return
         if self.video_data.cap is None:
             return
 
-        # if the app is not playing but this function
-        # was called, then just take the last
-        # frame and apply the filters and update
-        # the ui to show the filtered frame.
-        # This is the case when the video is paused but
-        # the filter slider trigger this function (by callback).
-        if not self.is_playing:
-            # filter last frame
-            frame = self.get_filter_values_and_apply_to_frame(
-                self.video_data.last_playing_frame
-            )
-            # pass filterd frame to ui update function
-            self.update_video_in_ui(frame)
-            return
-
-        # check if video is playing. Get next frame.
+        # Get next frame.
         ret, frame = self.video_data.cap.read()
         # if no data
         if not ret:
@@ -452,6 +461,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             brightness_strength=self.slider_brightness.value(),
             saturation_strength=self.slider_saturation.value(),
             sharpen_strength=self.slider_sharpen.value(),
+            hue_value=self.dial_hue.value(),
         )
         # return
         return dc_filter_params

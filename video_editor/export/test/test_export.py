@@ -41,6 +41,7 @@ class TestVideoExporterFunc(unittest.TestCase):
             brightness_strength=30,  # -100-100
             saturation_strength=30,  # -100-100
             sharpen_strength=2,  # 0-5
+            hue_value=30,
         )
 
         # define export parameters

@@ -36,6 +36,7 @@ class TestMainWindow(unittest.TestCase):
         self.assertIsNotNone(self.window.label_sepia)
         self.assertIsNotNone(self.window.label_sharpen)
         self.assertIsNotNone(self.window.label_saturation)
+        self.assertIsNotNone(self.window.label_hue)
         self.assertIsNotNone(self.window.label_time)
         self.assertIsNotNone(self.window.slider_blur)
         self.assertIsNotNone(self.window.slider_canny)
@@ -44,6 +45,7 @@ class TestMainWindow(unittest.TestCase):
         self.assertIsNotNone(self.window.slider_saturation)
         self.assertIsNotNone(self.window.slider_brightness)
         self.assertIsNotNone(self.window.slider_video)
+        self.assertIsNotNone(self.window.dial_hue)
 
     @classmethod
     def tearDownClass(cls):

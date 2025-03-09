@@ -31,6 +31,7 @@ class DCFiltersParams:
     brightness_strength: Optional[int] = None
     saturation_strength: Optional[int] = None
     sharpen_strength: Optional[int] = None
+    hue_value: Optional[int] = None
 
 
 @dataclass

@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'video_editor/app/ui/mainwindow2.ui'
+# Form implementation generated from reading ui file 'video_editor/app/ui/mainwindow.ui'
 #
 # Created by: PyQt6 UI code generator 6.8.1
 #
@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(806, 600)
+        MainWindow.resize(705, 676)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Policy.Preferred,
             QtWidgets.QSizePolicy.Policy.Preferred,
@@ -91,115 +91,155 @@ class Ui_MainWindow(object):
         )
         self.label_video.setSizePolicy(sizePolicy)
         self.label_video.setMinimumSize(QtCore.QSize(0, 0))
+        self.label_video.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.label_video.setAutoFillBackground(False)
         self.label_video.setTextFormat(QtCore.Qt.TextFormat.AutoText)
         self.label_video.setScaledContents(False)
         self.label_video.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_video.setObjectName("label_video")
         self.horizontalLayout_2.addWidget(self.label_video)
-        self.groupBox_3 = QtWidgets.QGroupBox(parent=self.frame_3)
-        sizePolicy = QtWidgets.QSizePolicy(
-            QtWidgets.QSizePolicy.Policy.Preferred,
-            QtWidgets.QSizePolicy.Policy.Preferred,
+        self.scroll__area = QtWidgets.QScrollArea(parent=self.frame_3)
+        self.scroll__area.setMinimumSize(QtCore.QSize(200, 0))
+        self.scroll__area.setMaximumSize(QtCore.QSize(200, 16777215))
+        self.scroll__area.setHorizontalScrollBarPolicy(
+            QtCore.Qt.ScrollBarPolicy.ScrollBarAlwaysOff
         )
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(
-            self.groupBox_3.sizePolicy().hasHeightForWidth()
+        self.scroll__area.setSizeAdjustPolicy(
+            QtWidgets.QAbstractScrollArea.SizeAdjustPolicy.AdjustToContents
         )
-        self.groupBox_3.setSizePolicy(sizePolicy)
-        self.groupBox_3.setMaximumSize(QtCore.QSize(200, 16777215))
-        self.groupBox_3.setTitle("")
-        self.groupBox_3.setObjectName("groupBox_3")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.groupBox_3)
-        self.verticalLayout.setContentsMargins(10, 10, 10, 0)
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.label_brightness = QtWidgets.QLabel(parent=self.groupBox_3)
-        self.label_brightness.setMinimumSize(QtCore.QSize(150, 0))
-        self.label_brightness.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.label_brightness.setObjectName("label_brightness")
-        self.verticalLayout.addWidget(self.label_brightness)
-        self.slider_brightness = QtWidgets.QSlider(parent=self.groupBox_3)
-        self.slider_brightness.setMinimumSize(QtCore.QSize(150, 0))
-        self.slider_brightness.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.slider_brightness.setMinimum(-100)
-        self.slider_brightness.setMaximum(100)
-        self.slider_brightness.setOrientation(QtCore.Qt.Orientation.Horizontal)
-        self.slider_brightness.setObjectName("slider_brightness")
-        self.verticalLayout.addWidget(self.slider_brightness)
-        self.label_saturation = QtWidgets.QLabel(parent=self.groupBox_3)
+        self.scroll__area.setWidgetResizable(True)
+        self.scroll__area.setObjectName("scroll__area")
+        self.scrollAreaWidgetContents_2 = QtWidgets.QWidget()
+        self.scrollAreaWidgetContents_2.setGeometry(
+            QtCore.QRect(0, 0, 198, 450)
+        )
+        self.scrollAreaWidgetContents_2.setObjectName(
+            "scrollAreaWidgetContents_2"
+        )
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout(
+            self.scrollAreaWidgetContents_2
+        )
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.label_saturation = QtWidgets.QLabel(
+            parent=self.scrollAreaWidgetContents_2
+        )
         self.label_saturation.setMinimumSize(QtCore.QSize(150, 0))
-        self.label_saturation.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.label_saturation.setMaximumSize(QtCore.QSize(150, 16777215))
         self.label_saturation.setObjectName("label_saturation")
-        self.verticalLayout.addWidget(self.label_saturation)
-        self.slider_saturation = QtWidgets.QSlider(parent=self.groupBox_3)
+        self.verticalLayout_3.addWidget(self.label_saturation)
+        self.slider_saturation = QtWidgets.QSlider(
+            parent=self.scrollAreaWidgetContents_2
+        )
         self.slider_saturation.setMinimumSize(QtCore.QSize(150, 0))
-        self.slider_saturation.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.slider_saturation.setMaximumSize(QtCore.QSize(150, 16777215))
         self.slider_saturation.setMinimum(-100)
         self.slider_saturation.setMaximum(100)
         self.slider_saturation.setOrientation(QtCore.Qt.Orientation.Horizontal)
         self.slider_saturation.setObjectName("slider_saturation")
-        self.verticalLayout.addWidget(self.slider_saturation)
-        self.label_blur = QtWidgets.QLabel(parent=self.groupBox_3)
+        self.verticalLayout_3.addWidget(self.slider_saturation)
+        self.label_brightness = QtWidgets.QLabel(
+            parent=self.scrollAreaWidgetContents_2
+        )
+        self.label_brightness.setMinimumSize(QtCore.QSize(150, 0))
+        self.label_brightness.setMaximumSize(QtCore.QSize(150, 16777215))
+        self.label_brightness.setObjectName("label_brightness")
+        self.verticalLayout_3.addWidget(self.label_brightness)
+        self.slider_brightness = QtWidgets.QSlider(
+            parent=self.scrollAreaWidgetContents_2
+        )
+        self.slider_brightness.setMinimumSize(QtCore.QSize(150, 0))
+        self.slider_brightness.setMaximumSize(QtCore.QSize(150, 16777215))
+        self.slider_brightness.setMinimum(-100)
+        self.slider_brightness.setMaximum(100)
+        self.slider_brightness.setOrientation(QtCore.Qt.Orientation.Horizontal)
+        self.slider_brightness.setObjectName("slider_brightness")
+        self.verticalLayout_3.addWidget(self.slider_brightness)
+        self.label_sepia = QtWidgets.QLabel(
+            parent=self.scrollAreaWidgetContents_2
+        )
+        self.label_sepia.setMinimumSize(QtCore.QSize(150, 0))
+        self.label_sepia.setMaximumSize(QtCore.QSize(150, 16777215))
+        self.label_sepia.setObjectName("label_sepia")
+        self.verticalLayout_3.addWidget(self.label_sepia)
+        self.slider_sepia = QtWidgets.QSlider(
+            parent=self.scrollAreaWidgetContents_2
+        )
+        self.slider_sepia.setMinimumSize(QtCore.QSize(150, 0))
+        self.slider_sepia.setMaximumSize(QtCore.QSize(150, 16777215))
+        self.slider_sepia.setMaximum(100)
+        self.slider_sepia.setOrientation(QtCore.Qt.Orientation.Horizontal)
+        self.slider_sepia.setObjectName("slider_sepia")
+        self.verticalLayout_3.addWidget(self.slider_sepia)
+        self.label_blur = QtWidgets.QLabel(
+            parent=self.scrollAreaWidgetContents_2
+        )
         self.label_blur.setMinimumSize(QtCore.QSize(150, 0))
-        self.label_blur.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.label_blur.setMaximumSize(QtCore.QSize(150, 16777215))
         self.label_blur.setObjectName("label_blur")
-        self.verticalLayout.addWidget(self.label_blur)
-        self.slider_blur = QtWidgets.QSlider(parent=self.groupBox_3)
+        self.verticalLayout_3.addWidget(self.label_blur)
+        self.slider_blur = QtWidgets.QSlider(
+            parent=self.scrollAreaWidgetContents_2
+        )
         self.slider_blur.setMinimumSize(QtCore.QSize(150, 0))
-        self.slider_blur.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.slider_blur.setMaximumSize(QtCore.QSize(150, 16777215))
         self.slider_blur.setMaximum(20)
         self.slider_blur.setOrientation(QtCore.Qt.Orientation.Horizontal)
         self.slider_blur.setTickPosition(QtWidgets.QSlider.TickPosition.NoTicks)
         self.slider_blur.setObjectName("slider_blur")
-        self.verticalLayout.addWidget(self.slider_blur)
-        self.label_sepia = QtWidgets.QLabel(parent=self.groupBox_3)
-        self.label_sepia.setMinimumSize(QtCore.QSize(150, 0))
-        self.label_sepia.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.label_sepia.setObjectName("label_sepia")
-        self.verticalLayout.addWidget(self.label_sepia)
-        self.slider_sepia = QtWidgets.QSlider(parent=self.groupBox_3)
-        self.slider_sepia.setMinimumSize(QtCore.QSize(150, 0))
-        self.slider_sepia.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.slider_sepia.setMaximum(100)
-        self.slider_sepia.setOrientation(QtCore.Qt.Orientation.Horizontal)
-        self.slider_sepia.setObjectName("slider_sepia")
-        self.verticalLayout.addWidget(self.slider_sepia)
-        self.label_sharpen = QtWidgets.QLabel(parent=self.groupBox_3)
+        self.verticalLayout_3.addWidget(self.slider_blur)
+        self.label_canny = QtWidgets.QLabel(
+            parent=self.scrollAreaWidgetContents_2
+        )
+        self.label_canny.setMinimumSize(QtCore.QSize(150, 0))
+        self.label_canny.setMaximumSize(QtCore.QSize(150, 16777215))
+        self.label_canny.setObjectName("label_canny")
+        self.verticalLayout_3.addWidget(self.label_canny)
+        self.slider_canny = QtWidgets.QSlider(
+            parent=self.scrollAreaWidgetContents_2
+        )
+        self.slider_canny.setMinimumSize(QtCore.QSize(150, 0))
+        self.slider_canny.setMaximumSize(QtCore.QSize(150, 16777215))
+        self.slider_canny.setMaximum(255)
+        self.slider_canny.setOrientation(QtCore.Qt.Orientation.Horizontal)
+        self.slider_canny.setObjectName("slider_canny")
+        self.verticalLayout_3.addWidget(self.slider_canny)
+        self.label_sharpen = QtWidgets.QLabel(
+            parent=self.scrollAreaWidgetContents_2
+        )
         self.label_sharpen.setMinimumSize(QtCore.QSize(150, 0))
-        self.label_sharpen.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.label_sharpen.setMaximumSize(QtCore.QSize(150, 16777215))
         self.label_sharpen.setObjectName("label_sharpen")
-        self.verticalLayout.addWidget(self.label_sharpen)
-        self.slider_sharpen = QtWidgets.QSlider(parent=self.groupBox_3)
+        self.verticalLayout_3.addWidget(self.label_sharpen)
+        self.slider_sharpen = QtWidgets.QSlider(
+            parent=self.scrollAreaWidgetContents_2
+        )
         self.slider_sharpen.setMinimumSize(QtCore.QSize(150, 0))
-        self.slider_sharpen.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.slider_sharpen.setMaximumSize(QtCore.QSize(150, 16777215))
         self.slider_sharpen.setMaximum(5)
         self.slider_sharpen.setOrientation(QtCore.Qt.Orientation.Horizontal)
         self.slider_sharpen.setTickPosition(
             QtWidgets.QSlider.TickPosition.NoTicks
         )
         self.slider_sharpen.setObjectName("slider_sharpen")
-        self.verticalLayout.addWidget(self.slider_sharpen)
-        self.label_canny = QtWidgets.QLabel(parent=self.groupBox_3)
-        self.label_canny.setMinimumSize(QtCore.QSize(150, 0))
-        self.label_canny.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.label_canny.setObjectName("label_canny")
-        self.verticalLayout.addWidget(self.label_canny)
-        self.slider_canny = QtWidgets.QSlider(parent=self.groupBox_3)
-        self.slider_canny.setMinimumSize(QtCore.QSize(150, 0))
-        self.slider_canny.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.slider_canny.setMaximum(255)
-        self.slider_canny.setOrientation(QtCore.Qt.Orientation.Horizontal)
-        self.slider_canny.setObjectName("slider_canny")
-        self.verticalLayout.addWidget(self.slider_canny)
-        spacerItem1 = QtWidgets.QSpacerItem(
-            20,
-            40,
-            QtWidgets.QSizePolicy.Policy.Minimum,
-            QtWidgets.QSizePolicy.Policy.Expanding,
+        self.verticalLayout_3.addWidget(self.slider_sharpen)
+        self.label_hue = QtWidgets.QLabel(
+            parent=self.scrollAreaWidgetContents_2
         )
-        self.verticalLayout.addItem(spacerItem1)
-        self.horizontalLayout_2.addWidget(self.groupBox_3)
+        self.label_hue.setMaximumSize(QtCore.QSize(150, 16777215))
+        self.label_hue.setObjectName("label_hue")
+        self.verticalLayout_3.addWidget(self.label_hue)
+        self.dial_hue = QtWidgets.QDial(parent=self.scrollAreaWidgetContents_2)
+        self.dial_hue.setMinimumSize(QtCore.QSize(170, 0))
+        self.dial_hue.setMaximumSize(QtCore.QSize(170, 16777215))
+        self.dial_hue.setMinimum(-180)
+        self.dial_hue.setMaximum(180)
+        self.dial_hue.setSliderPosition(0)
+        self.dial_hue.setWrapping(True)
+        self.dial_hue.setNotchesVisible(True)
+        self.dial_hue.setObjectName("dial_hue")
+        self.verticalLayout_3.addWidget(self.dial_hue)
+        self.scroll__area.setWidget(self.scrollAreaWidgetContents_2)
+        self.horizontalLayout_2.addWidget(self.scroll__area)
         self.verticalLayout_2.addWidget(self.frame_3)
         self.frame_2 = QtWidgets.QFrame(parent=self.centralwidget)
         self.frame_2.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
@@ -225,17 +265,17 @@ class Ui_MainWindow(object):
         self.label_time = QtWidgets.QLabel(parent=self.frame_2)
         self.label_time.setObjectName("label_time")
         self.horizontalLayout.addWidget(self.label_time)
-        spacerItem2 = QtWidgets.QSpacerItem(
+        spacerItem1 = QtWidgets.QSpacerItem(
             40,
             20,
             QtWidgets.QSizePolicy.Policy.Expanding,
             QtWidgets.QSizePolicy.Policy.Minimum,
         )
-        self.horizontalLayout.addItem(spacerItem2)
+        self.horizontalLayout.addItem(spacerItem1)
         self.verticalLayout_2.addWidget(self.frame_2)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 806, 37))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 705, 37))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
@@ -257,12 +297,13 @@ class Ui_MainWindow(object):
         self.label_fps.setText(_translate("MainWindow", "FPS: -"))
         self.label_resolution.setText(_translate("MainWindow", "Resolution: -"))
         self.label_video.setText(_translate("MainWindow", "No file selected"))
-        self.label_brightness.setText(_translate("MainWindow", "Brightness"))
         self.label_saturation.setText(_translate("MainWindow", "Saturation"))
-        self.label_blur.setText(_translate("MainWindow", "Blur"))
+        self.label_brightness.setText(_translate("MainWindow", "Brightness"))
         self.label_sepia.setText(_translate("MainWindow", "Sepia"))
-        self.label_sharpen.setText(_translate("MainWindow", "Sharpen"))
+        self.label_blur.setText(_translate("MainWindow", "Blur"))
         self.label_canny.setText(_translate("MainWindow", "Canny"))
+        self.label_sharpen.setText(_translate("MainWindow", "Sharpen"))
+        self.label_hue.setText(_translate("MainWindow", "Hue"))
         self.btn_play_pause.setText(_translate("MainWindow", "Play"))
         self.btn_stop.setText(_translate("MainWindow", "Stop"))
         self.label_time.setText(_translate("MainWindow", "00:00 / 00:00"))
