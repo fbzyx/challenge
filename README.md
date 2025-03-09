@@ -62,7 +62,7 @@ Go to  System Settings -> click Privacy & Security -> Then scroll down to Securi
 - Import video files in .mp4 .avi .mov formats
 - Check the length and size of the frames and if the file can be opened
 - Display a dialog box with basic information of the video file or error.
-- Filters in the following order: Blur → Canny → Sharpen → Brightness → Saturation → Hue → Tone → Sepia.
+- Filters in the following order: Blur → Canny → Sharpen → Brightness → Saturation → Hue → Sepia.
 - Start, stop buttons and video position slider.
 - Video export function using multiprocessing.
 - Unit test

@@ -8,7 +8,7 @@ class TestAdjustHue(unittest.TestCase):
     def setUp(self):
         """Create a test image (pure red in BGR format)"""
         self.image = np.zeros((100, 100, 3), dtype=np.uint8)
-        self.image[:, :] = [0, 0, 255]  # Pure red in BGR
+        self.image[:, :] = [0, 0, 255]  # pure red in BGR
 
     def test_hue_shift_positive(self):
         """Test hue shift with a positive value"""
