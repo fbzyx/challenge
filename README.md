@@ -1,6 +1,6 @@
 # Code Challenge: Video editor 
 
-![alt text](images/ui.png "Title")
+![Video editor UI](images/ui.png "Video editor UI")
 
 In the following guide you will find a description of how to run the video editor application and its unittest.
 
