@@ -44,6 +44,9 @@ In the video folder there is a collection of videos so that you can test the app
 In the /dist folder there are two files, double click on one of them. Both have the name run_app but one runs in terminal and the other is an .app file for MAC OS. Note that it may take several seconds to start (I don't know why, but about 30 seconds).
 **Since the bundled application was compiled on a MAC OS machine with Pyinstaller, the bundled application can only be run on another MAC OS machine (with Apple silicon)**.
 
+If your machine doesnt allow app execution due to security concerns:
+Go to  System Settings -> click Privacy & Security -> Then scroll down to Security -> Look for the name of this app and allow to execute
+
 
 ## Features
 
@@ -57,11 +60,11 @@ In the /dist folder there are two files, double click on one of them. Both have 
 
 ## Testing
 
-To test the complete application, go to the root folder (aquaticode_challenge) and run the following command in the terminal:
+To test the complete application, go to the root folder (challenge) and run the following command in the terminal:
 ```
 python -m unittest discover -s video_editor
 ```
-You can also run the tests from within the application folder as shown below:
+You can also run the tests from within the application folder (video_editor) as shown below:
 ```
 python -m unittest discover 
 
