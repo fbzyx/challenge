@@ -3,6 +3,7 @@ from enum import Enum, auto, unique
 
 @unique
 class TypeVideoTypeStatus(str, Enum):
+    """Keys for the status of the video"""
     def _generate_next_value_(item_name, start, count, last_values):
         return str(item_name)
 
@@ -16,6 +17,7 @@ class TypeVideoTypeStatus(str, Enum):
 
 @unique
 class TypeLoadStatus(str, Enum):
+    """Keys for the video load status"""
     def _generate_next_value_(item_name, start, count, last_values):
         return str(item_name)
 
@@ -25,6 +27,7 @@ class TypeLoadStatus(str, Enum):
 
 @unique
 class TypeExportStatus(str, Enum):
+    """Export video status"""
     def _generate_next_value_(item_name, start, count, last_values):
         return str(item_name)
 

@@ -16,6 +16,15 @@ The second way is to run a packaged application shipped within the folder. In th
 
 The application was developed with Python 3.9
 
+Clone this code repository:
+```
+git clone https://github.com/fbzyx/challenge.git
+```
+go to **challenge** folder:
+```
+cd challenge
+```
+
 First, in the root directory create and activate a virtual environment:
 ```
 python -m venv venv 
@@ -39,7 +48,7 @@ In the video folder there is a collection of videos so that you can test the app
 
 ---
 
-### Executing app on MAC OS (with Apple silicon)
+### Executing app packaged
 
 In the /dist folder there are two files, double click on one of them. Both have the name run_app but one runs in terminal and the other is an .app file for MAC OS. Note that it may take several seconds to start (I don't know why, but about 30 seconds).
 **Since the bundled application was compiled on a MAC OS machine with Pyinstaller, the bundled application can only be run on another MAC OS machine (with Apple silicon)**.
