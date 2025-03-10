@@ -30,7 +30,7 @@ First, in the root directory create and activate a virtual environment:
 python -m venv venv 
 source venv/bin/activate
 ```
-You should now have a virtual environment in a venv folder.
+You should now have a virtual environment in a venv folder inside the challenge folder.
 
 Next, install the project requirements:
 ```
@@ -50,7 +50,7 @@ In the video folder there is a collection of videos so that you can test the app
 
 ### Executing app packaged
 
-In the /dist folder there are two files, double click on one of them. Both have the name run_app but one runs in terminal and the other is an .app file for MAC OS. Note that it may take several seconds to start (I don't know why, but about 30 seconds).
+In the /dist folder there are two files, double click on one of them. Both have the name run_app but one runs in terminal and the other is an .app file for mac OS. Note that it may take several seconds to start (I don't know why, but about 30 seconds).
 **Since the bundled application was compiled on a mac OS machine with Pyinstaller, the bundled application can only be run on another mac OS machine (with Apple silicon)**.
 
 If your machine doesnt allow app execution due to security concerns:
