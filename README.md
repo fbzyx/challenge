@@ -51,7 +51,7 @@ In the video folder there is a collection of videos so that you can test the app
 ### Executing app packaged
 
 In the /dist folder there are two files, double click on one of them. Both have the name run_app but one runs in terminal and the other is an .app file for MAC OS. Note that it may take several seconds to start (I don't know why, but about 30 seconds).
-**Since the bundled application was compiled on a MAC OS machine with Pyinstaller, the bundled application can only be run on another MAC OS machine (with Apple silicon)**.
+**Since the bundled application was compiled on a mac OS machine with Pyinstaller, the bundled application can only be run on another mac OS machine (with Apple silicon)**.
 
 If your machine doesnt allow app execution due to security concerns:
 Go to  System Settings -> click Privacy & Security -> Then scroll down to Security -> Look for the name of this app and allow to execute
