@@ -93,7 +93,7 @@ This executes the test of test_export.py.
 I used ChatGPT mainly for creating filters and their tests. 
 It is very useful for coding testcases, where the coding for each filter is repetitive.
 
-### PyQT6
+### PyQt6
 
 A very useful resource is the following: https://www.pythonguis.com/pyqt6-tutorial/
 
