@@ -1,6 +1,13 @@
-# Code Challenge: Video editor 
+# Filter video editor 
 
-![Video editor UI](images/ui.png "Video editor UI")
+<!--![Video editor UI](images/ui.png "Video editor UI")-->
+
+<p float="left">
+    <img src="images/ui.png" width="220" />
+    <img src="images/ui1.png" width="220" /> 
+    <img src="images/ui2.png" width="220" />
+    <img src="images/ui3.png" width="220" />
+</p>
 
 In the following guide you will find a description of how to run the video editor application and its unittest.
 
@@ -18,7 +25,7 @@ The application was developed with Python 3.9
 
 Clone this code repository:
 ```
-git clone https://github.com/fbzyx/challenge.git
+https://github.com/fbzyx/video-editor.git
 ```
 go to **challenge** folder:
 ```
@@ -30,7 +37,7 @@ First, in the root directory create and activate a virtual environment:
 python -m venv venv 
 source venv/bin/activate
 ```
-You should now have a virtual environment in a venv folder.
+You should now have a virtual environment in a venv folder inside the challenge folder.
 
 Next, install the project requirements:
 ```
@@ -50,8 +57,8 @@ In the video folder there is a collection of videos so that you can test the app
 
 ### Executing app packaged
 
-In the /dist folder there are two files, double click on one of them. Both have the name run_app but one runs in terminal and the other is an .app file for MAC OS. Note that it may take several seconds to start (I don't know why, but about 30 seconds).
-**Since the bundled application was compiled on a MAC OS machine with Pyinstaller, the bundled application can only be run on another MAC OS machine (with Apple silicon)**.
+In the /dist folder there are two files, double click on one of them. Both have the name run_app but one runs in terminal and the other is an .app file for mac OS. Note that it may take several seconds to start (I don't know why, but about 30 seconds).
+**Since the bundled application was compiled on a mac OS machine with Pyinstaller, the bundled application can only be run on another mac OS machine (with Apple silicon)**.
 
 If your machine doesnt allow app execution due to security concerns:
 Go to  System Settings -> click Privacy & Security -> Then scroll down to Security -> Look for the name of this app and allow to execute
@@ -93,8 +100,10 @@ This executes the test of test_export.py.
 I used ChatGPT mainly for creating filters and their tests. 
 It is very useful for coding testcases, where the coding for each filter is repetitive.
 
-### PyQT6
+### PyQt6
 
 A very useful resource is the following: https://www.pythonguis.com/pyqt6-tutorial/
 
 For Qt Designer this was a good tutorial on how to use layouts and containers in the user interface: https://www.youtube.com/watch?v=EmZZvBEKBxc
+
+#### [Done by fbzyx](https://fbzyx.de)

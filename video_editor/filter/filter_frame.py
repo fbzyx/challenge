@@ -42,4 +42,5 @@ def get_filtered_frame(
     frame = hue_apply(frame, filter_data_params.hue_value)
     frame = sepia_apply(frame, filter_data_params.sepia_strength)
 
+
     return frame
