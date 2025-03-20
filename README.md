@@ -27,9 +27,9 @@ Clone this code repository:
 ```
 https://github.com/fbzyx/video-editor.git
 ```
-go to **challenge** folder:
+go to **video-editor/** folder:
 ```
-cd challenge
+cd video-editor
 ```
 
 First, in the root directory create and activate a virtual environment:
@@ -37,7 +37,7 @@ First, in the root directory create and activate a virtual environment:
 python -m venv venv 
 source venv/bin/activate
 ```
-You should now have a virtual environment in a venv folder inside the challenge folder.
+You should now have a virtual environment in a venv folder inside the **video-editor/** folder.
 
 Next, install the project requirements:
 ```
@@ -76,17 +76,17 @@ Go to  System Settings -> click Privacy & Security -> Then scroll down to Securi
 
 ## Testing
 
-To test the complete application, go to the root folder (challenge) and run the following command in the terminal:
+To test the complete application, go to the root folder (**video-editor/**) and run the following command in the terminal:
 ```
 python -m unittest discover -s video_editor
 ```
-You can also run the tests from within the application folder (video_editor) as shown below:
+You can also run the tests from within the application folder (**video_editor/**) as shown below:
 ```
 python -m unittest discover 
 
 ```
 
-A single test file can be run as follows (from within the video_editor folder):
+A single test file can be run as follows (from within the **video_editor/** folder):
 
 ```
 python -m unittest export.test.test_export
